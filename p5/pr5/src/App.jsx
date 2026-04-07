@@ -3,6 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './App.css'
+
 const issues = [
   { id: 1, title: "Bug Fix", description: "Fix login issue", status: "Open" },
   { id: 2, title: "UI Update", description: "Improve design", status: "Closed" }
@@ -15,18 +16,17 @@ function App() {
     <>
       <section id="center">
         <div>
-      <h1>Issue Tracker</h1>
-
-      <ul>
-        {issues.map((issue) => (
-          <li key={issue.id}>
-            <h2>{issue.title}</h2>
-            <p>{issue.description}</p>
-            <p>Status: {issue.status}</p>
-          </li>
-        ))}
-      </ul>
-    </div>
+          <h1>Issue Tracker</h1>
+          <ul>
+            {issues.map((issue) => (
+              <li key={issue.id}>
+                <h2>{issue.title}</h2>
+                <p>{issue.description}</p>
+                <p>Status: {issue.status}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
         <div className="hero">
           <img src={heroImg} className="base" width="170" height="179" alt="" />
           <img src={reactLogo} className="framework" alt="React logo" />
