@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Student Object</title>
+</head>
+
+<body>
+
+<script>
+
+function createStudent() {
+    let student = {
+        name: prompt("Enter student name:"),
+        grade: parseFloat(prompt("Enter student grade:")),
+        subjects: prompt("Enter subjects (comma separated):").split(','),
+        passed: function() {
+            return this.grade >= 40;
+        }
+    };
+    return student;
+}
+
+function displayInfo(student) {
+    console.log("Name:", student.name);
+    console.log("Grade:", student.grade);
+    console.log("Subjects:", student.subjects.join(", "));
+    console.log("Passed:", student.passed() ? "Yes" : "No");
+    console.log("-------------------");
+}
+
+let n = parseInt(prompt("Enter number of students:"));
+
+for (let i = 0; i < n; i++) {
+    let student = createStudent();
+    displayInfo(student);
+}
+
+</script>
+
+</body>
+</html>
